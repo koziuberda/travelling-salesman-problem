@@ -17,11 +17,12 @@ namespace TravellingSalesmanProblem
             NumberOfVisit = numberOfVisit;
         }
 
-        public List<int> LocationOfFlowerPatch()
+        public List<int> LocationOfFlowerPatch
         {
-            return new List<int>(_traversalOrder);
+            get => new List<int>(_traversalOrder);
+            set => _traversalOrder = new List<int>(value);
         }
-        
+
         public enum BeeStatus
         {
             Active,
