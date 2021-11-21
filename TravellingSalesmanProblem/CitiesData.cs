@@ -10,7 +10,7 @@ namespace TravellingSalesmanProblem
         }
 
         public int[,] WeightMatrix => (int[,]) _weightMatrix.Clone();
-        public int GetDimension => _weightMatrix.GetLength(0);
+        public int Dimension => _weightMatrix.GetLength(0);
         public int GetWeight(int i, int j) => _weightMatrix[i, j];
     }
 }
