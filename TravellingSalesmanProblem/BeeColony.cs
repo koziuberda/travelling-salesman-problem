@@ -90,8 +90,13 @@ namespace TravellingSalesmanProblem
             }
 
             distance = _bestBee.Value;
+
+            var bestSolution = _bestBee.LocationOfFlowerPatch;
             
-            return _bestBee.LocationOfFlowerPatch;
+            // Return to the start point
+            bestSolution.Add(bestSolution[0]);
+            
+            return bestSolution;
         }
 
         private void ProcessActiveBee(int i)
@@ -246,6 +251,9 @@ namespace TravellingSalesmanProblem
             {
                 costOfPath += _citiesData.GetWeight(solution[i], solution[i + 1]);
             }
+
+            // Goes back to the start city
+            costOfPath += _citiesData.GetWeight(solution[solution.Count-1], solution[0]);
 
             return costOfPath;
         }
